@@ -1,9 +1,6 @@
 ### Description
 As a [type of user], I want [some goal] so that [some reason]
 
-### Steps to reproduce
-(delete if not a bug)
-
 ### Tasks
 - [ ] Create database table 'example'
 
@@ -11,6 +8,5 @@ As a [type of user], I want [some goal] so that [some reason]
 - [ ] I can/cannot [do something]
 
 ### Definition of Done
-- [ ] Documentation updated
+- [ ] Tested
 - [ ] Reviewed
-- [ ] Acceptance Test

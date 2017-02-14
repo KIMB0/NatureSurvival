@@ -1,19 +1,19 @@
-<ion-header>
+<ion-header color=dark>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Guides
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
   <ion-list>
-    <ion-item>
+    <ion-item *ngFor="let item of this.survivalList">
       <ion-thumbnail item-left>
-        <img src="/assets/icon/favicon.ico">
+        <img src="{{item.image}}">
       </ion-thumbnail>
-      <h2>Test item</h2>
-      <p>Dette er et test item!</p>
+      <h2>{{item.title}}</h2>
+      <p>{{item.description}}</p>
     </ion-item>
   </ion-list>
 </ion-content>

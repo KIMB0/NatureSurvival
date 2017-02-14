@@ -1,19 +1,19 @@
-<ion-header color=dark>
-  <ion-navbar>
-    <ion-title>
+<ion-header no-border>
+  <ion-navbar color=dark>
+    <ion-title text-center>
       Guides
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <ion-list>
-    <ion-item *ngFor="let item of this.survivalList">
-      <ion-thumbnail item-left>
-        <img src="{{item.image}}">
-      </ion-thumbnail>
-      <h2>{{item.title}}</h2>
-      <p>{{item.description}}</p>
-    </ion-item>
-  </ion-list>
+    <ion-list>
+      <ion-item *ngFor="let item of this.survivalList" color=appGreen>
+        <ion-thumbnail item-left>
+          <img src="{{item.image}}">
+        </ion-thumbnail>
+        <h2>{{item.title}}</h2>
+        <p>{{item.description}}</p>
+      </ion-item>
+    </ion-list>
 </ion-content>

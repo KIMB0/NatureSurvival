@@ -11,7 +11,6 @@ export class GuideListsPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {}
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad GuideListsPage');
   }
 
 }

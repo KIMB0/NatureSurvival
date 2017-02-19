@@ -7,10 +7,13 @@ import { NavController, NavParams } from 'ionic-angular';
   templateUrl: 'guide-lists.html'
 })
 export class GuideListsPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  public selectedGuide: any;
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.selectedGuide = this.navParams.get("selectedGuide");
+  }
 
   ionViewDidLoad() {
+    console.log(this.selectedGuide)
   }
 
 }

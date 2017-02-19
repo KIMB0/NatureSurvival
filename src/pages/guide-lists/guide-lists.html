@@ -10,7 +10,7 @@
 
 <ion-content padding>
   <ion-list>
-    <ion-item *ngFor="let guideItem of this.selectedGuide.guideItem" color=appGreen>
+    <ion-item *ngFor="let guideItem of this.selectedGuide.guideItem" color=appGreen (click)="goToGuideDetailsPage(guideItem)">
       <ion-avatar item-left>
         <img src="{{guideItem.image}}">
       </ion-avatar>

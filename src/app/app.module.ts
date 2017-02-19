@@ -5,13 +5,15 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { GuideListsPage } from '../pages/guide-lists/guide-lists';
+import { GuideDetailsPage } from '../pages/guide-details/guide-details';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     TabsPage,
-    GuideListsPage
+    GuideListsPage,
+    GuideDetailsPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -21,7 +23,8 @@ import { GuideListsPage } from '../pages/guide-lists/guide-lists';
     MyApp,
     HomePage,
     TabsPage,
-    GuideListsPage
+    GuideListsPage,
+    GuideDetailsPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })

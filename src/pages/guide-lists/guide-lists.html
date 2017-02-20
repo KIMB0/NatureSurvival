@@ -10,6 +10,7 @@
 
 <ion-content padding>
   <ion-list>
+    <ion-searchbar [(ngModel)]="searchQuery" (input)="getItems($event)" (ionClear)="onClear($event)"></ion-searchbar>
     <ion-item *ngFor="let guideItem of this.selectedGuide.guideItem" color=appGreen (click)="goToGuideDetailsPage(guideItem)">
       <ion-avatar item-left>
         <img src="{{guideItem.image}}">

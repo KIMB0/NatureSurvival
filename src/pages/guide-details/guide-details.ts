@@ -14,8 +14,4 @@ export class GuideDetailsPage {
     this.selectedGuideItem = this.navParams.get("selectedGuideItem")
   }
 
-  ionViewDidLoad() {
-    console.log(this.selectedGuideItem);
-  }
-
 }

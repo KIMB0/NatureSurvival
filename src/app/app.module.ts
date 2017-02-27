@@ -7,6 +7,7 @@ import { HomePage } from '../pages/home/home';
 import { GuideListsPage } from '../pages/guide-lists/guide-lists';
 import { GuideDetailsPage } from '../pages/guide-details/guide-details';
 import { MapPage } from '../pages/map/map';
+import { WeatherPage } from '../pages/weather/weather';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { MapPage } from '../pages/map/map';
     HomePage,
     GuideListsPage,
     GuideDetailsPage,
-    MapPage
+    MapPage,
+    WeatherPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -28,7 +30,8 @@ import { MapPage } from '../pages/map/map';
     HomePage,
     GuideListsPage,
     GuideDetailsPage,
-    MapPage
+    MapPage,
+    WeatherPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })

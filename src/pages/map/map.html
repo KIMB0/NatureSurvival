@@ -1,11 +1,10 @@
-
 <ion-header no-border>
   <ion-navbar color=dark padding-left>
     <ion-title text-center padding-left>
       Map
     </ion-title>
     <ion-buttons end padding-right>
-      <ion-toggle></ion-toggle>
+      <ion-toggle [(ngModel)]="toggleMap" (ionChange)="enableMyLocation()"></ion-toggle>
     </ion-buttons>
   </ion-navbar>
 </ion-header>

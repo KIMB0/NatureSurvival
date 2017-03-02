@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { WeatherProvider } from '../../providers/weather-provider';
 
 @Component({
   selector: 'page-weather',
@@ -7,10 +7,16 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class WeatherPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  private city: string;
+  private weatherData: any;
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad WeatherPage');
+  constructor(public weatherProvider: WeatherProvider) {
+
   }
 
+  getCityWeather(){
+    this.weatherProvider.getWeather(this.city).subscribe(data =>  { this.weatherData = data.json();
+    },
+    err => alert(err), () => console.log(this.weatherData) );
+  }
 }

@@ -1,12 +1,14 @@
 <ion-header>
-
   <ion-navbar>
-    <ion-title>weather</ion-title>
+    <ion-title>
+      Weather
+    </ion-title>
   </ion-navbar>
-
 </ion-header>
 
-
 <ion-content padding>
-
+  <ion-item>
+    <ion-input [(ngModel)]="city" type="text"></ion-input>
+    <button ion-button item-right (click)="getCityWeather()">Search</button>
+  </ion-item>
 </ion-content>

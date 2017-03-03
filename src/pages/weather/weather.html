@@ -1,6 +1,6 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>
+<ion-header no-border>
+  <ion-navbar color=dark>
+    <ion-title text-center>
       Weather
     </ion-title>
   </ion-navbar>
@@ -8,7 +8,17 @@
 
 <ion-content padding>
   <ion-item>
-    <ion-input [(ngModel)]="city" type="text"></ion-input>
-    <button ion-button item-right (click)="getCityWeather()">Search</button>
+    <ion-input [(ngModel)]="city" type="text" placeholder="Enter a city name" clearInput></ion-input>
+    <button color=dark ion-button item-right (click)="getCityWeather()">Search</button>
   </ion-item>
+  <div padding *ngIf="search" class="weather-informations">
+    <ion-label>City and country:</ion-label>
+    <h3>{{this.weatherData.name}} - {{this.weatherData.sys.country}}</h3>
+    <ion-label>Tempature status:</ion-label>
+    <h5>{{this.weatherData.main.temp}}°C - {{this.weatherData.weather[0].description}}</h5>
+    <ion-label>Wind speed:</ion-label>
+    <p>{{this.weatherData.wind.speed}} m/s</p>
+    <ion-label>Humidity:</ion-label>
+    <p>{{this.weatherData.main.humidity}}%</p>
+  </div>
 </ion-content>

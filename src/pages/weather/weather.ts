@@ -12,8 +12,6 @@ export class WeatherPage {
   private search: boolean = false;
 
   constructor(public weatherProvider: WeatherProvider) {
-
-
   }
 
   getCityWeather(){

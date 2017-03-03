@@ -1,12 +1,15 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
-import { MyApp } from './app.component';
 
+import { MyApp } from './app.component';
 import { TabsPage } from '../pages/tabs/tabs';
 import { HomePage } from '../pages/home/home';
 import { GuideListsPage } from '../pages/guide-lists/guide-lists';
 import { GuideDetailsPage } from '../pages/guide-details/guide-details';
 import { MapPage } from '../pages/map/map';
+import { WeatherPage } from '../pages/weather/weather';
+
+import { WeatherProvider } from '../providers/weather-provider';
 
 
 @NgModule({
@@ -16,7 +19,8 @@ import { MapPage } from '../pages/map/map';
     HomePage,
     GuideListsPage,
     GuideDetailsPage,
-    MapPage
+    MapPage,
+    WeatherPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -28,8 +32,9 @@ import { MapPage } from '../pages/map/map';
     HomePage,
     GuideListsPage,
     GuideDetailsPage,
-    MapPage
+    MapPage,
+    WeatherPage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
+  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, WeatherProvider]
 })
 export class AppModule {}

@@ -34,6 +34,6 @@ export class HomePage {
   }
 
   goToGuideListsPage(guide){
-    this.navCtrl.push(GuideListsPage, {selectedGuide: guide})
+    this.navCtrl.push(GuideListsPage, {selectedGuide: guide}, {animation: "wp-transition"})
   }
 }

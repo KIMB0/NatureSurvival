@@ -7,9 +7,7 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class SharePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
 
-  ionViewDidLoad() {
   }
-
 }

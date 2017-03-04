@@ -1,5 +1,6 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
+import { AngularFireModule } from 'angularfire2';
 
 import { MyApp } from './app.component';
 import { TabsPage } from '../pages/tabs/tabs';
@@ -12,6 +13,13 @@ import { SharePage } from '../pages/share/share';
 
 import { WeatherProvider } from '../providers/weather-provider';
 
+export const firebaseConfig = {
+  apiKey: "AIzaSyCLARd6L4vvLCYS9LkbyEXNKHOhMreJSwE",
+  authDomain: "naturesurvival-159720.firebaseapp.com",
+  databaseURL: "https://naturesurvival-159720.firebaseio.com",
+  storageBucket: "naturesurvival-159720.appspot.com",
+  messagingSenderId: "542917946461"
+};
 
 @NgModule({
   declarations: [
@@ -25,7 +33,7 @@ import { WeatherProvider } from '../providers/weather-provider';
     SharePage
   ],
   imports: [
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp), AngularFireModule.initializeApp(firebaseConfig)
   ],
   bootstrap: [IonicApp],
   entryComponents: [

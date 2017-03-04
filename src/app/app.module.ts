@@ -8,6 +8,7 @@ import { GuideListsPage } from '../pages/guide-lists/guide-lists';
 import { GuideDetailsPage } from '../pages/guide-details/guide-details';
 import { MapPage } from '../pages/map/map';
 import { WeatherPage } from '../pages/weather/weather';
+import { SharePage } from '../pages/share/share';
 
 import { WeatherProvider } from '../providers/weather-provider';
 
@@ -20,7 +21,8 @@ import { WeatherProvider } from '../providers/weather-provider';
     GuideListsPage,
     GuideDetailsPage,
     MapPage,
-    WeatherPage
+    WeatherPage,
+    SharePage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -33,7 +35,8 @@ import { WeatherProvider } from '../providers/weather-provider';
     GuideListsPage,
     GuideDetailsPage,
     MapPage,
-    WeatherPage
+    WeatherPage,
+    SharePage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, WeatherProvider]
 })

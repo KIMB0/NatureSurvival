@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { AngularFire, FirebaseListObservable } from 'angularfire2'
+import { AngularFire, FirebaseListObservable } from 'angularfire2';
+import { PostSelectedPage } from '../post-selected/post-selected';
 
 @Component({
   selector: 'page-share',
@@ -8,12 +9,16 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2'
 })
 export class SharePage {
 
-  posts: FirebaseListObservable<any>;
+  public posts: FirebaseListObservable<any>;
 
   constructor(public navCtrl: NavController, public angFire: AngularFire) {
   }
 
   ionViewDidLoad(){
     this.posts = this.angFire.database.list('/UserUploads');
+  }
+
+  goToSelectedPost(post){
+    this.navCtrl.push(PostSelectedPage, {selectedPost: post})
   }
 }

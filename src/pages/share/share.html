@@ -1,0 +1,15 @@
+
+<ion-header no-border>
+  <ion-navbar color=dark>
+    <ion-title text-center>Share</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card *ngFor="let post of posts | async">
+    <button ion-item>
+      <label item-left>{{post.title}}</label>
+      <p item-right>by {{post.name}}</p>
+    </button>
+  </ion-card>
+</ion-content>

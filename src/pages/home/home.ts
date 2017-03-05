@@ -17,7 +17,7 @@ export class HomePage {
   constructor(public navCtrl: NavController) {
   }
 
-  ionViewDidEnter(){
+  ionViewDidLoad(){
     this.survivalList = []
     this.survivalList.push(new Guide("Food","How to find food", "assets/img/food.png",
     [new GuideItem("Fish","About fish","There are hundreds of different species of fish that are edible, with some of the most common being bass, cod, flounder, halibut, mackerel, red snapper, salmon, trout and tuna. Edible fish are found around the world in both freshwater and saltwater and from small ponds to deep oceans.","How to catch a fish?","Creating a makeshift spear for fishing is very easy. You can use metal, wood, or a sharp piece of bone with a whittled sharp end or barbed point. This type of spears is very useful when used with a torch at night while wading shallows.","assets/img/food/fish1.jpg"),
@@ -34,6 +34,6 @@ export class HomePage {
   }
 
   goToGuideListsPage(guide){
-    this.navCtrl.push(GuideListsPage, {selectedGuide: guide})
+    this.navCtrl.push(GuideListsPage, {selectedGuide: guide}, {animation: "wp-transition"})
   }
 }

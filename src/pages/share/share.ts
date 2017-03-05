@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { AngularFire, FirebaseListObservable } from 'angularfire2'
 
 @Component({
   selector: 'page-share',
@@ -7,7 +8,12 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class SharePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  posts: FirebaseListObservable<any>;
 
+  constructor(public navCtrl: NavController, public angFire: AngularFire) {
+  }
+
+  ionViewDidLoad(){
+    this.posts = this.angFire.database.list('/UserUploads');
   }
 }

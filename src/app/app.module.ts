@@ -10,6 +10,7 @@ import { GuideDetailsPage } from '../pages/guide-details/guide-details';
 import { MapPage } from '../pages/map/map';
 import { WeatherPage } from '../pages/weather/weather';
 import { SharePage } from '../pages/share/share';
+import { PostSelectedPage } from '../pages/post-selected/post-selected';
 
 import { WeatherProvider } from '../providers/weather-provider';
 
@@ -30,7 +31,8 @@ export const firebaseConfig = {
     GuideDetailsPage,
     MapPage,
     WeatherPage,
-    SharePage
+    SharePage,
+    PostSelectedPage
   ],
   imports: [
     IonicModule.forRoot(MyApp), AngularFireModule.initializeApp(firebaseConfig)
@@ -44,7 +46,8 @@ export const firebaseConfig = {
     GuideDetailsPage,
     MapPage,
     WeatherPage,
-    SharePage
+    SharePage,
+    PostSelectedPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, WeatherProvider]
 })

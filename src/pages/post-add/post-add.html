@@ -10,27 +10,28 @@
   <ion-list>
   <ion-item color=appGreen>
     <ion-label floating>Your name</ion-label>
-    <ion-input type="text"></ion-input>
+    <ion-input type="text" [(ngModel)]="name"></ion-input>
   </ion-item>
   <br>
   <ion-item color=appGreen>
     <ion-label floating>Image title</ion-label>
-    <ion-input type="text"></ion-input>
+    <ion-input type="text" [(ngModel)]="title"></ion-input>
   </ion-item>
   <br>
   <ion-item color=appGreen>
     <ion-label floating>Image description</ion-label>
-    <ion-textarea type="text"></ion-textarea>
+    <ion-textarea type="text" [(ngModel)]="description"></ion-textarea>
   </ion-item>
   <br>
   <ion-item color=appGreen>
-    <button ion-button outline icon-right round>
-    Add an image
+    <p padding-left *ngIf="uploadIsDone">Picture added!</p>
+    <button ion-button outline icon-right round (click)="takePhoto()">
+    Take a picture
     <ion-icon name="md-camera"></ion-icon>
     </button>
   </ion-item>
   <br>
   <br>
-  <button ion-button block color=dark>Upload</button>
+  <button ion-button block color=dark (click)="uploadData()">Upload</button>
 </ion-list>
 </ion-content>

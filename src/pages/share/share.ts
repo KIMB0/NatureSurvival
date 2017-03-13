@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 import { PostSelectedPage } from '../post-selected/post-selected';
+import { PostAddPage } from '../post-add/post-add';
 
 @Component({
   selector: 'page-share',
@@ -19,6 +20,10 @@ export class SharePage {
   }
 
   goToSelectedPost(post){
-    this.navCtrl.push(PostSelectedPage, {selectedPost: post})
+    this.navCtrl.push(PostSelectedPage, {selectedPost: post});
+  }
+
+  goToAddPost(){
+    this.navCtrl.push(PostAddPage);
   }
 }

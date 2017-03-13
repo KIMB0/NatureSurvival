@@ -76,8 +76,6 @@ export class PostAddPage {
     });
   }
 
-
-
   getRandomNumber(){
     let date = new Date();
     this.randomNumberString = date.getTime().toString() + ".jpg";

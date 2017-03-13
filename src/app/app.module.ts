@@ -14,6 +14,7 @@ import { PostSelectedPage } from '../pages/post-selected/post-selected';
 import { PostAddPage } from '../pages/post-add/post-add';
 
 import { WeatherProvider } from '../providers/weather-provider';
+import { NoteProvider } from '../providers/note-provider';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyCLARd6L4vvLCYS9LkbyEXNKHOhMreJSwE",
@@ -52,6 +53,6 @@ export const firebaseConfig = {
     PostSelectedPage,
     PostAddPage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, WeatherProvider]
+  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, WeatherProvider, NoteProvider]
 })
 export class AppModule {}

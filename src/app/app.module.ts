@@ -1,6 +1,7 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { AngularFireModule } from 'angularfire2';
+import { Storage } from '@ionic/storage';
 
 import { MyApp } from './app.component';
 import { TabsPage } from '../pages/tabs/tabs';
@@ -53,6 +54,6 @@ export const firebaseConfig = {
     PostSelectedPage,
     PostAddPage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, WeatherProvider, NoteProvider]
+  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, WeatherProvider, NoteProvider, Storage]
 })
 export class AppModule {}

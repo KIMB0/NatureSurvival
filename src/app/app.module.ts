@@ -1,12 +1,14 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { AngularFireModule } from 'angularfire2';
+import { Storage } from '@ionic/storage';
 
 import { MyApp } from './app.component';
 import { TabsPage } from '../pages/tabs/tabs';
 import { HomePage } from '../pages/home/home';
 import { GuideListsPage } from '../pages/guide-lists/guide-lists';
 import { GuideDetailsPage } from '../pages/guide-details/guide-details';
+import { NotesPage } from '../pages/notes/notes';
 import { MapPage } from '../pages/map/map';
 import { WeatherPage } from '../pages/weather/weather';
 import { SharePage } from '../pages/share/share';
@@ -14,6 +16,7 @@ import { PostSelectedPage } from '../pages/post-selected/post-selected';
 import { PostAddPage } from '../pages/post-add/post-add';
 
 import { WeatherProvider } from '../providers/weather-provider';
+import { NoteProvider } from '../providers/note-provider';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyCLARd6L4vvLCYS9LkbyEXNKHOhMreJSwE",
@@ -30,6 +33,7 @@ export const firebaseConfig = {
     HomePage,
     GuideListsPage,
     GuideDetailsPage,
+    NotesPage,
     MapPage,
     WeatherPage,
     SharePage,
@@ -46,12 +50,13 @@ export const firebaseConfig = {
     HomePage,
     GuideListsPage,
     GuideDetailsPage,
+    NotesPage,
     MapPage,
     WeatherPage,
     SharePage,
     PostSelectedPage,
     PostAddPage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, WeatherProvider]
+  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, WeatherProvider, NoteProvider, Storage]
 })
 export class AppModule {}

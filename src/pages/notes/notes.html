@@ -1,0 +1,21 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title text-center>Notes</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="presentAddNoteAlert()">
+        <ion-icon name="md-add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-item *ngFor="let note of noteProvider.notes">
+    <p>{{note}}</p>
+  </ion-item>
+
+</ion-content>

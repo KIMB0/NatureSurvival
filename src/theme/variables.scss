@@ -15,7 +15,6 @@ $text-input-md-highlight-color: none;
 $text-input-md-highlight-color-valid: none;
 
 
-
 // Named Color Variables
 // --------------------------------------------------
 // Named colors makes it easy to reuse colors on various components.
@@ -44,8 +43,8 @@ $colors: (
 // App Material Design Variables
 // --------------------------------------------------
 // Material Design only Sass variables can go here
-
-
+$alert-md-input-border-color-focused: #042100;
+$alert-md-button-text-color: #042100;
 
 
 // App Windows Variables

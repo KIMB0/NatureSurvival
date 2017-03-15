@@ -8,6 +8,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { HomePage } from '../pages/home/home';
 import { GuideListsPage } from '../pages/guide-lists/guide-lists';
 import { GuideDetailsPage } from '../pages/guide-details/guide-details';
+import { NotesPage } from '../pages/notes/notes';
 import { MapPage } from '../pages/map/map';
 import { WeatherPage } from '../pages/weather/weather';
 import { SharePage } from '../pages/share/share';
@@ -32,6 +33,7 @@ export const firebaseConfig = {
     HomePage,
     GuideListsPage,
     GuideDetailsPage,
+    NotesPage,
     MapPage,
     WeatherPage,
     SharePage,
@@ -48,6 +50,7 @@ export const firebaseConfig = {
     HomePage,
     GuideListsPage,
     GuideDetailsPage,
+    NotesPage,
     MapPage,
     WeatherPage,
     SharePage,

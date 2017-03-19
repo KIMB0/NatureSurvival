@@ -19,7 +19,6 @@ export class WeatherPage {
     let loading = this.loadingCtrl.create({});
     loading.present().then(() => {
 
-
     this.weatherProvider.getWeather(this.city).subscribe(data =>  { this.weatherData = data.json()
     },
     err => {alert(err), loading.dismiss()}, () => {this.search = true, loading.dismiss()});

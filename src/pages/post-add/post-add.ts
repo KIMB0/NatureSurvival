@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 import { Camera } from 'ionic-native';
+import { ToastProvider } from '../../providers/toast-provider';
 import * as firebase from 'firebase';
 
 @Component({
@@ -23,7 +24,7 @@ export class PostAddPage {
   public randomNumberString: string;
   private uploadIsDone: boolean = false;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public angFire: AngularFire) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public angFire: AngularFire, public toastProvider: ToastProvider) {
   }
 
   ionViewDidLoad(){
@@ -84,6 +85,7 @@ export class PostAddPage {
   pushDataToDatabase(){
     this.posts.push({image: this.downloadURL, name: this.name, title: this.title, description: this.description});
     this.navCtrl.pop();
+    this.toastProvider.presentToast("Experience uploaded")
   }
 
 }

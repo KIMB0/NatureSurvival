@@ -38,4 +38,8 @@ export class NotesPage {
     alert.present();
   }
 
+  deleteNote(index: number){
+    this.noteProvider.deleteNote(index);
+  }
+
 }

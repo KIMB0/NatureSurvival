@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AlertController } from 'ionic-angular';
 import { NoteProvider } from '../../providers/note-provider';
+import { ToastProvider } from '../../providers/toast-provider';
 
 @Component({
   selector: 'page-notes',
@@ -8,7 +9,7 @@ import { NoteProvider } from '../../providers/note-provider';
 })
 export class NotesPage {
 
-  constructor(private noteProvider: NoteProvider, private alertCtrl: AlertController) {}
+  constructor(private noteProvider: NoteProvider, private alertCtrl: AlertController, public toastProvider: ToastProvider) {}
 
   ionViewDidLoad() {
     this.noteProvider.getNotes();
@@ -40,6 +41,7 @@ export class NotesPage {
 
   deleteNote(index: number){
     this.noteProvider.deleteNote(index);
+    this.toastProvider.presentToast("Note deleted");
   }
 
 }

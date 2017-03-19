@@ -22,4 +22,9 @@ export class NoteProvider {
     this.notes.push(note);
     this.storage.set("notes", this.notes);
   }
+
+  deleteNote(index: number){
+    this.notes.splice(index, 1);
+    this.storage.set("notes", this.notes);
+  }
 }

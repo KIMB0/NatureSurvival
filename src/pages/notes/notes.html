@@ -1,7 +1,6 @@
 
-<ion-header>
-
-  <ion-navbar>
+<ion-header no-border>
+  <ion-navbar color=dark>
     <ion-title text-center>Notes</ion-title>
     <ion-buttons end>
       <button ion-button icon-only (click)="presentAddNoteAlert()">
@@ -9,13 +8,20 @@
       </button>
     </ion-buttons>
   </ion-navbar>
-
 </ion-header>
 
-
 <ion-content padding>
-  <ion-item *ngFor="let note of noteProvider.notes">
-    <p>{{note}}</p>
-  </ion-item>
-
+  <ion-list>
+    <ion-item-sliding *ngFor="let note of noteProvider.notes, let i = index">
+      <ion-item>
+        <p>{{note}}</p>
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button color="danger" (click)="deleteNote(i)" text-capitalize	>
+          <ion-icon name="md-trash"></ion-icon>
+          Delete
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
 </ion-content>

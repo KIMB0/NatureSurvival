@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, LoadingController } from 'ionic-angular';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 import { Camera } from 'ionic-native';
 import { ToastProvider } from '../../providers/toast-provider';
@@ -24,7 +24,7 @@ export class PostAddPage {
   public randomNumberString: string;
   private uploadIsDone: boolean = false;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public angFire: AngularFire, public toastProvider: ToastProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public angFire: AngularFire, public toastProvider: ToastProvider, public loadingCtrl: LoadingController) {
   }
 
   ionViewDidLoad(){
@@ -57,6 +57,8 @@ export class PostAddPage {
   }
 
   uploadData() : Promise<any>{
+    let loading = this.loadingCtrl.create({})
+    loading.present();
     let uploadTask: any;
     let metadata = {
       contentType: 'image/jpeg'
@@ -68,8 +70,10 @@ export class PostAddPage {
       },
       (_err) => {
         reject(_err);
+        loading.dismiss();
       },
       (success) => {
+        loading.dismiss();
         resolve(uploadTask.snapshot);
         this.downloadURL = uploadTask.snapshot.downloadURL;
         this.pushDataToDatabase();
@@ -83,9 +87,16 @@ export class PostAddPage {
   }
 
   pushDataToDatabase(){
-    this.posts.push({image: this.downloadURL, name: this.name, title: this.title, description: this.description});
-    this.navCtrl.pop();
-    this.toastProvider.presentToast("Experience uploaded")
+    let loading = this.loadingCtrl.create({})
+    loading.present();
+    this.posts.push({image: this.downloadURL, name: this.name, title: this.title, description: this.description}).then(() => {
+      loading.dismiss();
+      this.navCtrl.pop();
+      this.toastProvider.presentToast("Experience uploaded");
+    }, (err) => {
+      alert(err);
+      loading.dismiss();
+    });
   }
 
 }

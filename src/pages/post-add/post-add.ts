@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, LoadingController } from 'ionic-angular';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
-import { Camera } from 'ionic-native';
+import { Camera, Shake } from 'ionic-native';
 import { ToastProvider } from '../../providers/toast-provider';
 import * as firebase from 'firebase';
 
@@ -23,6 +23,7 @@ export class PostAddPage {
   public downloadURL: any;
   public randomNumberString: string;
   private uploadIsDone: boolean = false;
+  private watch: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public angFire: AngularFire, public toastProvider: ToastProvider, public loadingCtrl: LoadingController) {
   }
@@ -30,6 +31,16 @@ export class PostAddPage {
   ionViewDidLoad(){
     this.storeRef = firebase.storage().ref()
     this.posts = this.angFire.database.list('/UserUploads');
+  }
+  ionViewDidEnter(){
+    this.watch = Shake.startWatch(60).subscribe(()=> {
+      this.name = "",
+      this.title = "",
+      this.description = "";
+    });
+  }
+  ionViewWillLeave(){
+    this.watch.unsubscribe();
   }
 
   takePhoto(){

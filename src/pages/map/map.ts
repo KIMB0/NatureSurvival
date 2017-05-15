@@ -12,9 +12,6 @@ export class MapPage {
   public toggleMap: boolean = true;
 
   constructor(public navCtrl: NavController, public platform: Platform) {
-    platform.ready().then(() => {
-      this.loadMap();
-    })
   }
 
   enableMyLocation(){
@@ -24,6 +21,10 @@ export class MapPage {
     else{
       this.map.setMyLocationEnabled(false);
     }
+  }
+
+  ionViewDidEnter(){
+    this.loadMap();
   }
 
   loadMap() {

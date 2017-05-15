@@ -1,7 +1,9 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { AngularFireModule } from 'angularfire2';
-import { Storage } from '@ionic/storage';
+import { IonicStorageModule } from '@ionic/storage';
+import { BrowserModule } from '@angular/platform-browser';
+import { HttpModule } from '@angular/http';
 
 import { MyApp } from './app.component';
 import { TabsPage } from '../pages/tabs/tabs';
@@ -42,7 +44,7 @@ export const firebaseConfig = {
     PostAddPage
   ],
   imports: [
-    IonicModule.forRoot(MyApp), AngularFireModule.initializeApp(firebaseConfig)
+    IonicModule.forRoot(MyApp), BrowserModule, HttpModule, AngularFireModule.initializeApp(firebaseConfig), IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -58,6 +60,6 @@ export const firebaseConfig = {
     PostSelectedPage,
     PostAddPage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, WeatherProvider, NoteProvider, ToastProvider, Storage]
+  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, WeatherProvider, NoteProvider, ToastProvider]
 })
 export class AppModule {}

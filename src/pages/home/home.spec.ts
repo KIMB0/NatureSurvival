@@ -1,8 +1,8 @@
 import { HomePage } from './home';
 
-let homePage = null;
-
 describe('Home Page', () => {
+  let homePage = null;
+
   beforeEach(() => {
     homePage = new HomePage();
   });
@@ -14,7 +14,7 @@ describe('Home Page', () => {
     expect(result.length).toBeGreaterThan(0);
   });
 
-  it('should return an array with strings', () => {
+  it('should return an array(object)', () => {
     expect(typeof homePage.ionViewDidLoad()).toBe('object');
   });
 });

@@ -1,4 +1,5 @@
 import { PostAddPage } from './post-add';
+import {} from 'jasmine';
 
 
 describe('Post-Add Page', () => {
@@ -15,10 +16,17 @@ describe('Post-Add Page', () => {
     expect(postAddPage.description).toBe(undefined);
   });
 
-  it('should return a random string with at least 12 caracters', () => {
+  it('should return a random string with at least 16 caracters', () => {
 
     postAddPage.getRandomNumber();
 
     expect(postAddPage.randomNumberString.length).toBeGreaterThan(16);
-  })
+  });
+
+  it('should return a random string with ".jpg" in it', () => {
+
+    postAddPage.getRandomNumber();
+
+    expect(postAddPage.randomNumberString).toContain(".jpg");
+  });
 })

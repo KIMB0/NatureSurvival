@@ -10,8 +10,9 @@ import { GuideListsPage } from "../guide-lists/guide-lists";
   templateUrl: 'home.html'
 })
 export class HomePage {
-  public survivalList: Array<Guide>
+  public survivalList: Array<Guide>;
   selectedList;
+
 
 
   constructor(public navCtrl: NavController) {
@@ -31,6 +32,7 @@ export class HomePage {
 
     this.survivalList.push(new Guide("Shelter","How to make shelter", "assets/img/shelter.png",
     [new GuideItem("Sleeping place","About sleeping place","Proin lectus justo, quam vehicula ultrices. In sit augue, nulla luctus, ligula ut feugiat. Morbi ut, lacus fermentum.","How to make a sleeping place","Proin lectus justo, quam vehicula ultrices.","assets/img/food/home1.jpg")]))
+    return this.survivalList;
   }
 
   goToGuideListsPage(guide){

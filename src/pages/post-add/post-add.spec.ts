@@ -16,7 +16,7 @@ describe('Post-Add Page', () => {
     expect(postAddPage.description).toBe(undefined);
   });
 
-  it('should return a random string with at least 16 caracters', () => {
+  it('should return a random string with at least 17 caracters', () => {
 
     postAddPage.getRandomNumber();
 
@@ -28,5 +28,6 @@ describe('Post-Add Page', () => {
     postAddPage.getRandomNumber();
 
     expect(postAddPage.randomNumberString).toContain(".jpg");
+    console.log(postAddPage.randomNumberString);
   });
 })

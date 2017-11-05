@@ -1,13 +1,12 @@
 language: node_js
 node_js:
-  - "7"
+  - "6.9"
 
-sudo: none
+branches:
+  only:
+    - master
 
 before_install:
   - npm install -g ionic cordova
   - npm install
 
-build_script:
-  - yarn test
-  - yarn run build

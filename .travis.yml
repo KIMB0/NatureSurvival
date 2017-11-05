@@ -10,3 +10,4 @@ before_install:
   - npm install -g ionic cordova
   - npm install
 
+test: off
